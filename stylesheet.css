@@ -1,0 +1,63 @@
+body {
+    background: url('IMG_9760.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center center; /* Ensures the image is centered */
+    color: black; /* Changed text color to black */
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 0 10px; /* Added padding for better mobile view */
+}
+.main-title {
+    font-family: 'Didot', serif; /* Applied Didot font */
+    font-size: 2.5em; /* Adjusted size */
+    color: black; /* Changed text color to black */
+    margin-bottom: 5px; /* Reduced space between title and icons */
+}
+.social-icons {
+    margin-top: 5px; /* Reduced space between icons and footer */
+}
+.social-icons a {
+    color: black; /* Changed icon color to black */
+    margin: 0 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+.footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.8em; /* Adjusted size for visibility */
+    color: black; /* Changed text color to black */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2em; /* Smaller font size for tablets and smaller screens */
+    }
+    .social-icons a {
+        font-size: 25px; /* Smaller icons for tablets and smaller screens */
+        margin: 0 8px; /* Reduced margin for smaller screens */
+    }
+    .footer {
+        font-size: 0.7em; /* Smaller font size for footer on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5em; /* Smaller font size for mobile phones */
+    }
+    .social-icons a {
+        font-size: 20px; /* Smaller icons for mobile phones */
+        margin: 0 5px; /* Reduced margin for mobile phones */
+    }
+    .footer {
+        font-size: 0.6em; /* Smaller font size for footer on mobile phones */
+    }
+}
