@@ -1,8 +1,7 @@
 body {
-    background: url('/Images/IMG9760.JPG') no-repeat center center fixed;
+    background: url('Images/IMG9760.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center center; /* Ensures the image is centered */
-    color: white; /* Changed text color to white */
+    color: white;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
@@ -11,53 +10,88 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
-    padding: 0 10px; /* Added padding for better mobile view */
+    padding: 0 10px;
 }
+
 .main-title {
-    font-family: 'Didot', serif; /* Applied Didot font */
-    font-size: 2.5em; /* Adjusted size */
-    color: white; /* Changed text color to white */
-    margin-bottom: 5px; /* Reduced space between title and icons */
+    font-family: 'Didot', serif;
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 5px;
 }
+
 .social-icons {
-    margin-top: 5px; /* Reduced space between icons and footer */
+    margin-top: 5px;
 }
+
 .social-icons a {
-    color: white; /* Changed icon color to white */
+    color: white;
     margin: 0 10px;
     font-size: 30px;
     text-decoration: none;
 }
+
+.pre-order {
+    margin-top: 15px; /* Adds space between icons and button */
+}
+
+.pre-order-button {
+    color: white; /* Matches the overall text color */
+    background-color: transparent; /* Keeps it subtle and clean */
+    border: 2px solid white; /* Adds a border for the button */
+    padding: 10px 20px; /* Creates a button-like feel */
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pre-order-button:hover {
+    background-color: white; /* Changes the background on hover */
+    color: black; /* Inverts the text color on hover */
+}
+
 .footer {
     position: absolute;
     bottom: 10px;
-    font-size: 0.8em; /* Adjusted size for visibility */
-    color: white; /* Changed text color to white */
+    font-size: 0.8em;
+    color: white;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .main-title {
-        font-size: 2em; /* Smaller font size for tablets and smaller screens */
+        font-size: 2em;
     }
+
     .social-icons a {
-        font-size: 25px; /* Smaller icons for tablets and smaller screens */
-        margin: 0 8px; /* Reduced margin for smaller screens */
+        font-size: 25px;
+        margin: 0 8px;
     }
+
+    .pre-order-button {
+        font-size: 1em;
+    }
+
     .footer {
-        font-size: 0.7em; /* Smaller font size for footer on smaller screens */
+        font-size: 0.7em;
     }
 }
 
 @media (max-width: 480px) {
     .main-title {
-        font-size: 1.5em; /* Smaller font size for mobile phones */
+        font-size: 1.5em;
     }
+
     .social-icons a {
-        font-size: 20px; /* Smaller icons for mobile phones */
-        margin: 0 5px; /* Reduced margin for mobile phones */
+        font-size: 20px;
+        margin: 0 5px;
     }
+
+    .pre-order-button {
+        font-size: 0.9em;
+    }
+
     .footer {
-        font-size: 0.6em; /* Smaller font size for footer on mobile phones */
+        font-size: 0.6em;
     }
 }
