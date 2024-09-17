@@ -9,7 +9,7 @@ body {
 
 /* Section 1 */
 .section-1 {
-    background: url('/images/DSCF2029.JPG') no-repeat center center fixed;
+    background: url('/Images/DSCF2029.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -58,7 +58,7 @@ body {
 
 /* Section 2 */
 .section-2 {
-    background: url('/images/DSCF2052.JPG') no-repeat center center fixed;
+    background: url('/Images/DSCF2052.JPG') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire section */
     height: 100vh;
     display: flex;
