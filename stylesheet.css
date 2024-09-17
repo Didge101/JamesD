@@ -10,7 +10,7 @@ body {
 /* Section 1 */
 .section-1 {
     background: url('/Images/DSCF2029.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover; /* Ensure the image covers the entire section */
     height: 100vh;
     display: flex;
     flex-direction: column;
