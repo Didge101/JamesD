@@ -1,16 +1,21 @@
 body {
-    background: url('/Images/DSCF2029.JPG') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
+    margin: 0;
+    padding: 0;
     font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden; /* Prevents horizontal scrollbars */
+}
+
+/* Section 1 */
+.section-1 {
+    background: url('/images/DSCF2029.JPG') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    text-align: center;
-    padding: 0 10px;
 }
 
 .main-title {
@@ -32,14 +37,14 @@ body {
 }
 
 .pre-order {
-    margin-top: 15px; /* Adds space between icons and button */
+    margin-top: 15px;
 }
 
 .pre-order-button {
-    color: white; /* Matches the overall text color */
-    background-color: transparent; /* Keeps it subtle and clean */
-    border: 2px solid white; /* Adds a border for the button */
-    padding: 10px 20px; /* Creates a button-like feel */
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
     font-size: 1.2em;
     text-decoration: none;
     border-radius: 5px;
@@ -47,17 +52,55 @@ body {
 }
 
 .pre-order-button:hover {
-    background-color: white; /* Changes the background on hover */
-    color: black; /* Inverts the text color on hover */
+    background-color: white;
+    color: black;
+}
+
+/* Section 2 */
+.section-2 {
+    background: url('images/DSCF2052.JPG') no-repeat center center fixed;
+    background-size: cover; /* Ensure the image covers the entire section */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Make the section relative to position footer correctly */
+}
+
+/* Content in Section 2 */
+.content {
+    text-align: center;
+}
+
+/* Title above video */
+.video-title {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* Video Styling */
+.center-video {
+    display: block;
+    margin: 0 auto;
+    max-width: 60%; /* Reduced video size */
+    height: auto;
 }
 
 .footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 0; /* Ensure it sticks to the bottom */
+    left: 0;
+    width: 100%;
     font-size: 0.8em;
     color: white;
+    background-color: black; /* Set footer background to black */
+    padding: 20px;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .main-title {
         font-size: 2em;
@@ -70,6 +113,14 @@ body {
 
     .pre-order-button {
         font-size: 1em;
+    }
+
+    .video-title {
+        font-size: 1.5em;
+    }
+
+    .center-video {
+        max-width: 80%;
     }
 
     .footer {
@@ -89,6 +140,14 @@ body {
 
     .pre-order-button {
         font-size: 0.9em;
+    }
+
+    .video-title {
+        font-size: 1.2em;
+    }
+
+    .center-video {
+        max-width: 90%;
     }
 
     .footer {
