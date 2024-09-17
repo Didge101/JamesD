@@ -9,15 +9,30 @@ body {
 
 /* Section 1 */
 .section-1 {
-    background: url('/Images/DSCF2029.jpg') no-repeat center center;
-    background-size: cover; /* Ensure the image covers the entire section */
-    height: 100vh; /* Full viewport height */
+    background: url('/Images/DSCF2029.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* Allow positioning of pseudo-elements */
 }
 
+/* Add a pseudo-element to cover white space */
+.section-1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Images/DSCF2029.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Styling for the main title */
 .main-title {
     font-family: 'Didot', serif;
     font-size: 2.5em;
@@ -25,6 +40,7 @@ body {
     margin-bottom: 5px;
 }
 
+/* Styling for social icons */
 .social-icons {
     margin-top: 5px;
 }
@@ -36,6 +52,7 @@ body {
     text-decoration: none;
 }
 
+/* Styling for pre-save button */
 .pre-order {
     margin-top: 15px;
 }
@@ -58,14 +75,27 @@ body {
 
 /* Section 2 */
 .section-2 {
-    background: url('/Images/DSCF2052.JPG') no-repeat center center;
+    background: url('/Images/DSCF2052.JPG') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire section */
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative; /* Make the section relative to position footer correctly */
+}
+
+/* Add a pseudo-element to cover white space */
+.section-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/Images/DSCF2052.JPG') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
 }
 
 /* Content in Section 2 */
