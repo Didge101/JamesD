@@ -9,7 +9,7 @@ body {
 
 /* Section 1 */
 .section-1 {
-    background: url('/Images/DSCF2029.jpg') no-repeat center center fixed;
+    background: url('Images/DSCF2029.jpg') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire section */
     background-attachment: fixed; /* Ensure the background is fixed */
     height: 100vh;
@@ -21,7 +21,7 @@ body {
 
 /* Section 2 */
 .section-2 {
-    background: url('/Images/DSCF2052.JPG') no-repeat center center fixed;
+    background: url('Images/DSCF2052.JPG') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire section */
     background-attachment: fixed; /* Ensure the background is fixed */
     height: 100vh;
@@ -51,24 +51,18 @@ body {
     text-decoration: none;
 }
 
-.pre-order {
+.out-now {
     margin-top: 15px;
 }
 
-.pre-order-button {
-    color: white;
-    background-color: transparent;
-    border: 2px solid white;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.out-now-image {
+    width: 200px; /* Adjust size as needed */
 }
 
-.pre-order-button:hover {
-    background-color: white;
-    color: black;
+.out-now-text {
+    font-size: 1.5em;
+    color: white;
+    margin-top: 10px;
 }
 
 /* Content in Section 2 */
@@ -114,12 +108,8 @@ body {
         margin: 0 8px;
     }
 
-    .pre-order-button {
-        font-size: 1em;
-    }
-
-    .video-title {
-        font-size: 1.5em;
+    .out-now-text {
+        font-size: 1.2em;
     }
 
     .center-video {
@@ -141,12 +131,8 @@ body {
         margin: 0 5px;
     }
 
-    .pre-order-button {
-        font-size: 0.9em;
-    }
-
-    .video-title {
-        font-size: 1.2em;
+    .out-now-text {
+        font-size: 1em;
     }
 
     .center-video {
