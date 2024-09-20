@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didot:wght@400;700&display=swap">
 </head>
 <body>
-    <!-- Section 1: James D branding and pre-save button -->
-    <div class="section-1">
+    <!-- Section 1: James D branding and image link -->
+    <div class="section-1 parallax" data-speed="20">
         <div class="main-title">James D</div>
         <div class="social-icons">
             <a href="https://www.instagram.com/888didge/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -18,18 +18,23 @@
             <a href="https://open.spotify.com/artist/1t7AnALQP6ztA1A0EjhB1v" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
             <a href="https://music.apple.com/us/artist/didge/1717717343" target="_blank" title="Apple Music"><i class="fab fa-apple"></i></a>
         </div>
-        <div class="pre-order">
-            <a href="https://distrokid.com/hyperfollow/jamesd2/progress" target="_blank" class="pre-order-button">Pre-Save Now!</a>
+        <div class="out-now">
+            <a href="https://distrokid.com/hyperfollow/jamesd2/progress" target="_blank">
+                <img src="Images/outnowpic.png" alt="Out Now" class="out-now-image" id="hover-image">
+            </a>
+            <div class="out-now-text">OUT NOW!</div>
         </div>
+        <!-- Audio element for the song clip -->
+        <audio id="song-clip" src="Audio/Progress.wav"></audio>
     </div>
 
     <!-- Section 2: Video content -->
-    <div class="section-2">
+    <div class="section-2 parallax" data-speed="15">
         <div class="content">
             <h2 class="video-title">MORE TO COME</h2>
             <!-- Embedded video -->
             <video class="center-video" controls>
-                <source src="/Videos/BTS2.mp4" type="video/mp4">
+                <source src="Videos/BTS2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -37,11 +42,30 @@
             © 2024 James D | All Rights Reserved
         </div>
     </div>
+
     <script>
-        // JavaScript to scroll to top on page load
-        window.onload = function() {
-            window.scrollTo(0, 0);
-        };
+        const songClip = document.getElementById('song-clip');
+        const hoverImage = document.getElementById('hover-image');
+
+        // Hover event for playing the clip
+        hoverImage.addEventListener('mouseenter', () => {
+            songClip.currentTime = 0; // Reset to the start
+            songClip.play();
+            setTimeout(() => {
+                songClip.pause(); // Pause after 10 seconds
+            }, 10000); // 10 seconds
+        });
+
+        hoverImage.addEventListener('mouseleave', () => {
+            songClip.pause(); // Pause when mouse leaves
+        });
+
+        // Pause audio when the tab is not active
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                songClip.pause(); // Pause if the document is hidden
+            }
+        });
     </script>
 </body>
 </html>
