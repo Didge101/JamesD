@@ -1,0 +1,42 @@
+/* Bio Page Specific Styling */
+body {
+    background: url('Bio Images/DSCF3010.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds slight transparency for readability */
+}
+
+.bio-text {
+    font-size: 1.5rem;
+    max-width: 800px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.back-to-main {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-main:hover {
+    background-color: white;
+    color: black;
+}
