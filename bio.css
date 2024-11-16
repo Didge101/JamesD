@@ -1,6 +1,6 @@
 /* Bio Page Specific Styling */
 body {
-    background: url('Bio Images/DSCF3010.jpg') no-repeat center center fixed;
+    background: url('/Bio Images/DSCF3010.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     font-family: Arial, sans-serif;
