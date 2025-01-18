@@ -9,17 +9,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didot:wght@400;700&display=swap">
 </head>
 <body>
-    <!-- Section 1: James D branding and image link -->
+    <!-- Section 1: James D branding and video background -->
     <div class="section-1 parallax" data-speed="20">
+        <!-- Video Background -->
+        <video class="video-background" autoplay muted loop>
+            <source src="/Videos/loop.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
         <div class="main-title">James D</div>
         <div class="social-icons">
             <a href="https://www.instagram.com/jamesddidit/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.youtube.com/@Jam3sDMusic" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
             <a href="https://open.spotify.com/artist/1t7AnALQP6ztA1A0EjhB1v" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
             <a href="https://music.apple.com/us/artist/james-d/1760663911" target="_blank" title="Apple Music"><i class="fab fa-apple"></i></a>
-	<a href="https://soundcloud.com/david-gunner-761387445?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://soundcloud.com/david-gunner-761387445?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
         </div>
-        <!-- Updated Bio link -->
         <div class="bio-link" style="margin-top: 10px; text-align: center;">
             <a href="bio.html" style="color: white; text-decoration: none; font-size: 1.5em; font-family: 'Didot', serif; font-weight: bold;">
                 Bio
@@ -33,15 +38,20 @@
             <div class="out-now-text">OUT NOW!</div>
         </div>
 
-        <!-- Audio element for the song clip -->
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="/Images/Deftu logo white.png" alt="Deftu Logo" style="width: 120px;">
+        </div>
+
         <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
     </div>
 
-    <!-- Section 2: Video content -->
+    <!-- Section 2: Video content with image background -->
     <div class="section-2 parallax" data-speed="15">
+        <!-- Image Background for Section 2 -->
+        <div class="background-image"></div>
+        
         <div class="content">
             <h2 class="video-title">MORE TO COME</h2>
-            <!-- Embedded video -->
             <video class="center-video" controls>
                 <source src="/Videos/BTS2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
