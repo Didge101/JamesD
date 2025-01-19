@@ -4,56 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JamesD</title>
+    <link rel="icon" href="/Assets/deftu logo w background.png" type="image/png">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didot:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            text-align: center;
+            overflow-x: hidden; /* Prevents horizontal scrollbars */
+        }
+
+        .section-1 {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .section-1 video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .logo-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links {
+            display: none;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .social-links.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 30px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .spotify-bio {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .spotify-bio .bio-link {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 40px; /* Position the bio under the icon */
+            left: 25%;
+            transform: translateX(-50%);
+        }
+
+        .spotify-bio .bio-link:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .section-2 {
+            background: url('/Images/IMG_0114.JPG') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .footer {
+            color: white;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <!-- Section 1: James D branding and image link -->
     <div class="section-1">
-        <!-- Video Background -->
-        <video class="video-background" autoplay muted loop playsinline>
-            <source src="/Videos/Loop.mp4" type="video/mp4">
+        <video autoplay muted loop>
+            <source src="V/ideos/Loop.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
-        <div class="main-title">James D</div>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/jamesddidit/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@Jam3sDMusic" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://open.spotify.com/artist/1t7AnALQP6ztA1A0EjhB1v" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
-            <a href="https://music.apple.com/us/artist/james-d/1760663911" target="_blank" title="Apple Music"><i class="fab fa-apple"></i></a>
-            <a href="https://soundcloud.com/david-gunner-761387445?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
-        </div>
+        <div class="logo-container">
+            <img src="/Images/Deftu logo white.png" alt="Deftu Logo" class="logo" id="deftu-logo">
 
-        <!-- Updated Bio link -->
-        <div class="bio-link" style="margin-top: 10px; text-align: center;">
-            <a href="bio.html" style="color: white; text-decoration: none; font-size: 1.5em; font-family: 'Didot', serif; font-weight: bold;">
-                Bio
-            </a>
+            <div class="social-links" id="social-links">
+                <a href="https://www.instagram.com/jamesddidit/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Jam3sDMusic" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <div class="spotify-bio">
+                    <a href="https://open.spotify.com/artist/1t7AnALQP6ztA1A0EjhB1v" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+                    <a href="bio.html" target="_blank" class="bio-link" title="Bio">Bio</a>
+                </div>
+                <a href="https://music.apple.com/us/artist/james-d/1760663911" target="_blank" title="Apple Music"><i class="fab fa-apple"></i></a>
+                <a href="https://soundcloud.com/david-gunner-761387445?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+            </div>
         </div>
-
-        <div class="out-now">
-            <a href="https://distrokid.com/hyperfollow/jamesd2/4-am-feat-carse" target="_blank">
-                <img src="/Images/4amicon.JPG" alt="Alive Cover" class="out-now-image" id="hover-image">
-            </a>
-            <div class="out-now-text">OUT NOW!</div>
-        </div>
-
-        <!-- Logo directly below the "Out Now!" text -->
-        <div class="deftu-logo-container">
-            <img src="/Images/Deftu logo white.png" alt="Deftu Logo" class="deftu-logo">
-        </div>
-
-        <!-- Audio element for the song clip -->
-        <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
     </div>
 
-    <!-- Section 2: Video content -->
     <div class="section-2">
         <div class="content">
             <h2 class="video-title">MORE TO COME</h2>
-            <!-- Embedded video -->
             <video class="center-video" controls>
                 <source src="/Videos/BTS2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -64,12 +161,15 @@
         </div>
     </div>
 
+    <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
+
     <script>
         const songClip = document.getElementById('song-clip');
-        const hoverImage = document.getElementById('hover-image');
+        const logo = document.getElementById('deftu-logo');
+        const socialLinks = document.getElementById('social-links');
 
         // Hover event to play the clip from 44 seconds for 10 seconds
-        hoverImage.addEventListener('mouseenter', () => {
+        logo.addEventListener('mouseenter', () => {
             songClip.currentTime = 44; // Start at 44 seconds
             songClip.play();
             setTimeout(() => {
@@ -77,8 +177,13 @@
             }, 10000); // 10 seconds
         });
 
-        hoverImage.addEventListener('mouseleave', () => {
+        logo.addEventListener('mouseleave', () => {
             songClip.pause(); // Pause when mouse leaves
+        });
+
+        // Toggle social links visibility on logo click
+        logo.addEventListener('click', () => {
+            socialLinks.classList.toggle('active');
         });
 
         // Pause audio when the tab is not active
