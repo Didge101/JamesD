@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JamesD</title>
+    <link rel="icon" href="/Assets/deftu logo w background.png" type="image/png">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didot:wght@400;700&display=swap">
     <style>
-        /* General Styling */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Didot', serif;
+            font-family: 'Times New Roman', Times, serif;
             color: white;
+            text-align: center;
+            overflow-x: hidden; /* Prevents horizontal scrollbars */
         }
 
-        /* Section 1: Video Background */
+        /* Parallax Section 1 */
         .section-1 {
             position: relative;
             height: 100vh;
-            width: 100%;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            background: url('/Images/IMG_0114.JPG') no-repeat center center fixed;
+            background-size: cover;
         }
 
-        .video-background {
+        .section-1 video {
             position: absolute;
             top: 0;
             left: 0;
@@ -35,73 +38,79 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            will-change: transform;
         }
 
-        /* Main title */
-        .main-title {
-            position: absolute;
-            color: white;
-            font-size: 3em;
-            z-index: 1;
-        }
-
-        /* Social Icons */
-        .social-icons {
-            position: absolute;
-            bottom: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            z-index: 1;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 2em;
-        }
-
-        /* Bio Link */
-        .bio-link {
-            margin-top: 10px;
-            font-size: 1.5em;
-            font-family: 'Didot', serif;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-        }
-
-        /* Out Now Section */
-        .out-now {
-            position: absolute;
-            bottom: 100px;
+        .logo-container {
+            position: relative;
             text-align: center;
-            z-index: 1;
         }
 
-        .out-now-image {
-            width: 150px;
-            cursor: pointer;
-        }
-
-        /* Deftu Logo */
-        .deftu-logo-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
-        .deftu-logo {
+        .logo {
             width: 150px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
 
-        /* Section 2: Content */
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links {
+            display: none;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .social-links.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 30px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .spotify-bio {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .spotify-bio .bio-link {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+            position: absolute;
+            top: 40px; /* Position the bio under the icon */
+            left: 25%;
+            transform: translateX(-50%);
+        }
+
+        .spotify-bio .bio-link:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        /* Parallax Section 2 */
         .section-2 {
-            background: url('/Images/IMG_0114.JPG') no-repeat center center fixed;
+            background: url('Images/IMG_0114.JPG') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -109,6 +118,7 @@
             align-items: center;
             flex-direction: column;
             position: relative;
+            background-attachment: fixed; /* Parallax effect */
         }
 
         .footer {
@@ -118,76 +128,32 @@
             bottom: 20px;
             width: 100%;
         }
-
-        /* Mobile Parallax Effect */
-        @media (max-width: 768px) {
-            .section-1.parallax {
-                background: none;
-            }
-
-            .video-background {
-                object-position: center;
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                transform: translateY(0);
-                will-change: transform;
-                transition: transform 0.3s ease-out;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Section 1: Video background with parallax -->
-    <div class="section-1 parallax" data-speed="20">
-        <!-- Video Background -->
-        <video class="video-background" autoplay muted loop playsinline>
+    <div class="section-1">
+        <video autoplay muted loop>
             <source src="/Videos/Loop.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
-        <!-- Main Title -->
-        <div class="main-title">James D</div>
+        <div class="logo-container">
+            <img src="/Images/Deftu logo white.png" alt="Deftu Logo" class="logo" id="deftu-logo">
 
-        <!-- Social Links -->
-        <div class="social-icons">
-            <a href="https://www.instagram.com/jamesddidit/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@Jam3sDMusic" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://open.spotify.com/artist/1t7AnALQP6ztA1A0EjhB1v" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
-            <a href="https://music.apple.com/us/artist/james-d/1760663911" target="_blank" title="Apple Music"><i class="fab fa-apple"></i></a>
-            <a href="https://soundcloud.com/david-gunner-761387445?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+            <div class="social-links" id="social-links">
+                <a href="https://www.instagram.com/jamesddidit/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Jam3sDMusic" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <div class="spotify-bio">
+                    <a href="https://open.spotify.com/artist/1t7AnALQP6ztA1A0EjhB1v" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+                    <a href="bio.html" target="_blank" class="bio-link" title="Bio">Bio</a>
+                </div>
+                <a href="https://music.apple.com/us/artist/james-d/1760663911" target="_blank" title="Apple Music"><i class="fab fa-apple"></i></a>
+                <a href="https://soundcloud.com/david-gunner-761387445?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+            </div>
         </div>
-
-        <!-- Bio Link -->
-        <div class="bio-link">
-            <a href="bio.html">Bio</a>
-        </div>
-
-        <!-- Out Now Section -->
-        <div class="out-now">
-            <a href="https://distrokid.com/hyperfollow/jamesd2/4-am-feat-carse" target="_blank">
-                <img src="/Images/4amicon.JPG" alt="Alive Cover" class="out-now-image">
-            </a>
-            <div class="out-now-text">OUT NOW!</div>
-        </div>
-
-        <!-- Deftu Logo -->
-        <div class="deftu-logo-container">
-            <img src="/Images/Deftu logo white.png" alt="Deftu Logo" class="deftu-logo">
-        </div>
-
-        <!-- Song Audio -->
-        <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
     </div>
 
-    <!-- Section 2: Video content with image background -->
-    <div class="section-2 parallax" data-speed="15">
-        <!-- Image Background for Section 2 -->
-        <div class="background-image"></div>
-
+    <div class="section-2">
         <div class="content">
             <h2 class="video-title">MORE TO COME</h2>
             <video class="center-video" controls>
@@ -195,18 +161,20 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-
         <div class="footer">
             © 2024 James D | All Rights Reserved
         </div>
     </div>
 
+    <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
+
     <script>
         const songClip = document.getElementById('song-clip');
-        const hoverImage = document.getElementById('hover-image');
+        const logo = document.getElementById('deftu-logo');
+        const socialLinks = document.getElementById('social-links');
 
         // Hover event to play the clip from 44 seconds for 10 seconds
-        hoverImage.addEventListener('mouseenter', () => {
+        logo.addEventListener('mouseenter', () => {
             songClip.currentTime = 44; // Start at 44 seconds
             songClip.play();
             setTimeout(() => {
@@ -214,8 +182,13 @@
             }, 10000); // 10 seconds
         });
 
-        hoverImage.addEventListener('mouseleave', () => {
+        logo.addEventListener('mouseleave', () => {
             songClip.pause(); // Pause when mouse leaves
+        });
+
+        // Toggle social links visibility on logo click
+        logo.addEventListener('click', () => {
+            socialLinks.classList.toggle('active');
         });
 
         // Pause audio when the tab is not active
@@ -225,12 +198,11 @@
             }
         });
 
-        // Parallax effect for video background on scroll
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            const video = document.querySelector('.video-background');
-            const parallaxSpeed = 0.5; // Adjust speed of parallax movement
-            video.style.transform = `translateY(${scrollPosition * parallaxSpeed}px)`;
+        // Add parallax effect for video background
+        window.addEventListener('scroll', function() {
+            const section1 = document.querySelector('.section-1');
+            const scrollPos = window.scrollY;
+            section1.style.backgroundPositionY = scrollPos * 0.5 + "px"; // Adjust parallax speed
         });
     </script>
 </body>
