@@ -123,11 +123,18 @@
             bottom: 20px;
             width: 100%;
         }
+
+        @media screen and (max-width: 768px) {
+            .section-1 video {
+                object-fit: cover; /* Ensure video fills the container */
+                height: 100%; /* Keep video height consistent */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="section-1">
-        <video autoplay muted loop id="parallax-video">
+        <video autoplay muted loop playsinline>
             <source src="/Videos/Loop.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -164,36 +171,32 @@
     <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
 
     <script>
-        // Parallax effect for background video
-        window.addEventListener('scroll', function () {
-            const video = document.getElementById('parallax-video');
-            const scrollPosition = window.pageYOffset;
-            video.style.transform = 'translateY(' + (scrollPosition * 0.5) + 'px)';
-        });
-
         const songClip = document.getElementById('song-clip');
         const logo = document.getElementById('deftu-logo');
         const socialLinks = document.getElementById('social-links');
 
+        // Hover event to play the clip from 44 seconds for 10 seconds
         logo.addEventListener('mouseenter', () => {
-            songClip.currentTime = 44;
+            songClip.currentTime = 44; // Start at 44 seconds
             songClip.play();
             setTimeout(() => {
-                songClip.pause();
-            }, 10000);
+                songClip.pause(); // Pause after 10 seconds
+            }, 10000); // 10 seconds
         });
 
         logo.addEventListener('mouseleave', () => {
-            songClip.pause();
+            songClip.pause(); // Pause when mouse leaves
         });
 
+        // Toggle social links visibility on logo click
         logo.addEventListener('click', () => {
             socialLinks.classList.toggle('active');
         });
 
+        // Pause audio when the tab is not active
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
-                songClip.pause();
+                songClip.pause(); // Pause if the document is hidden
             }
         });
     </script>
