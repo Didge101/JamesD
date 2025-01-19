@@ -15,7 +15,8 @@
             font-family: 'Times New Roman', Times, serif;
             color: white;
             text-align: center;
-            overflow-x: hidden; /* Prevents horizontal scrollbars */
+            overflow-x: hidden;
+            overflow-y: auto; /* Make sure vertical scrolling works */
         }
 
         .section-1 {
@@ -40,6 +41,7 @@
         .logo-container {
             position: relative;
             text-align: center;
+            z-index: 1; /* Ensure logo is above the video */
         }
 
         .logo {
@@ -56,7 +58,6 @@
             display: none;
             margin-top: 20px;
             justify-content: center;
-            align-items: flex-start;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
@@ -75,7 +76,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
 
         .social-links a:hover {
@@ -96,7 +96,7 @@
             color: white;
             transition: transform 0.3s ease;
             position: absolute;
-            top: 40px; /* Position the bio under the icon */
+            top: 40px;
             left: 25%;
             transform: translateX(-50%);
         }
@@ -122,6 +122,18 @@
             position: absolute;
             bottom: 20px;
             width: 100%;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .logo {
+                width: 120px;
+            }
+
+            .section-2 {
+                background-position: center center;
+                background-attachment: unset; /* Fix mobile background issue */
+            }
         }
     </style>
 </head>
@@ -161,7 +173,7 @@
         </div>
     </div>
 
-    <audio id="song-clip" src="/Audio/4AM.mp3"></audio>
+    <audio id="song-clip" src="Audio/4AM.mp3"></audio>
 
     <script>
         const songClip = document.getElementById('song-clip');
@@ -198,14 +210,14 @@
 
         if (!isMobile) {
             // Parallax effect for desktop
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 const section1 = document.querySelector('.section-1');
                 const scrollPos = window.scrollY;
                 section1.style.backgroundPositionY = scrollPos * 0.5 + "px"; // Adjust parallax speed
             });
         } else {
             // For mobile: Move the video background on scroll
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 const video = document.querySelector('.section-1 video');
                 const scrollPos = window.scrollY;
                 video.style.transform = 'translateY(' + scrollPos * 0.3 + 'px)'; // Adjust movement speed
