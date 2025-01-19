@@ -15,7 +15,7 @@
             font-family: 'Times New Roman', Times, serif;
             color: white;
             text-align: center;
-            overflow-x: hidden; /* Prevents horizontal scrollbars */
+            overflow-x: hidden;
         }
 
         .section-1 {
@@ -25,6 +25,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            width: 100%;
         }
 
         .section-1 video {
@@ -35,6 +36,8 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            transform: translateY(0);
+            transition: transform 0.1s ease-out; /* Smooth transition for mobile */
         }
 
         .logo-container {
@@ -96,7 +99,7 @@
             color: white;
             transition: transform 0.3s ease;
             position: absolute;
-            top: 40px; /* Position the bio under the icon */
+            top: 40px;
             left: 25%;
             transform: translateX(-50%);
         }
@@ -127,7 +130,7 @@
 </head>
 <body>
     <div class="section-1">
-        <video autoplay muted loop>
+        <video id="background-video" autoplay muted loop>
             <source src="/Videos/Loop.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -167,6 +170,7 @@
         const songClip = document.getElementById('song-clip');
         const logo = document.getElementById('deftu-logo');
         const socialLinks = document.getElementById('social-links');
+        const video = document.getElementById('background-video');
 
         // Hover event to play the clip from 44 seconds for 10 seconds
         logo.addEventListener('mouseenter', () => {
@@ -184,6 +188,13 @@
         // Toggle social links visibility on logo click
         logo.addEventListener('click', () => {
             socialLinks.classList.toggle('active');
+        });
+
+        // Parallax effect for video on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            // Adjust video position based on scroll, for a parallax effect
+            video.style.transform = `translateY(${scrollPosition * 0.5}px)`; // Adjust this multiplier for different speeds
         });
 
         // Pause audio when the tab is not active
